@@ -1,0 +1,16 @@
+<%= form_for(@idea) do |f| %>
+
+<% if @idea.errors.any? %>
+  <h2><%= pluralize(@idea.errors.count, "error") %> prohibited this record from being saved:</h2>
+  <ul>
+    <% @idea.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.submit %>
+<% end %>
