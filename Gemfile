@@ -38,6 +38,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'capybara'
   gem 'launchy'
+  gem 'shoulda-matchers'
 end
 
 group :development do
