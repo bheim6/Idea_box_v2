@@ -1,0 +1,16 @@
+<h1>All Images</h1>
+
+<ul>
+  <% @images.each do |image| %>
+    <li><%= image.name %>
+        <%= link_to "View this Image", admin_image_path(image) %>
+        -
+        <%= link_to "Edit this Image", edit_admin_image_path(image) %>
+        -
+        <%= link_to "Delete this Image", admin_image_path(image), method: :delete %>
+    </li><br>
+
+  <% end %>
+</ul>
+
+<%= link_to "Add New Image To The Realm", new_admin_image_path %>

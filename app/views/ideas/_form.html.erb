@@ -11,7 +11,15 @@
 
   <%= f.label :name %>
   <%= f.text_field :name %>
-  <%= f.collection_select(:category_id, @categories.order(:name),:id, :name) %>
+  <%= f.collection_select(:category_id, @categories.order(:name),:id, :name) %><br />
+
+  <% @images.each do |image| -%>
+<div>
+  <%= check_box_tag(:image_ids, image.id, false, :name => 'idea[image_ids][]', id: "image-#{image.id}") %>
+  <%= image.name %>
+</div>
+<% end %>
+
 
   <%= f.submit %>
 <% end %>

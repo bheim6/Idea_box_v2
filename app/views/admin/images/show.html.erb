@@ -1,0 +1,13 @@
+<p><%= link_to "Back to Image Index", admin_images_path %></p>
+<h1><%= @image.name %></h1>
+
+<img src="<%= @image.url %>" >
+
+<h3>Ideas Associated with this Image</h3>
+<% @ideas.each do |idea| %>
+  <ul>
+    <li>
+      <%= idea.name %>
+    </li>
+  </ul>
+<% end %>
