@@ -1,6 +1,11 @@
 <%= link_to "Back to Index", ideas_path %>
 
 <h1><%= @idea.name %></h1>
+<% if @idea.category != nil %>
+Category: <%= link_to @idea.category.name, category_path(@idea.category) %><br />
+<% else %>
+<%= "No Category" %><br />
+<% end %>
 
 <%= link_to "Edit Idea", edit_idea_path(@idea) %><br />
 <%= link_to "Delete Idea", idea_path, method: :delete %>

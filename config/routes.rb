@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :ideas
 
   resources :users, only: [:new, :create, :show, :edit, :update]
+  resources :categories, only: [:show]
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
