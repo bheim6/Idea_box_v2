@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :categories
+    resources :images
   end
 
   get "/login", to: "sessions#new"

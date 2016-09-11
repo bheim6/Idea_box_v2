@@ -12,6 +12,7 @@ before_action :set_idea, only: [:show, :edit, :update]
   def new
     @idea = Idea.new
     @categories = Category.all
+    @images = Image.all
   end
 
   def create
@@ -29,6 +30,7 @@ before_action :set_idea, only: [:show, :edit, :update]
 
   def edit
     @categories = Category.all
+    @images = Image.all
   end
 
   def update
@@ -50,7 +52,7 @@ before_action :set_idea, only: [:show, :edit, :update]
 
   private
   def idea_params
-    params.require(:idea).permit(:name, :category_id)
+    params.require(:idea).permit(:name, :category_id, image_ids: [])
   end
 
   def set_idea
