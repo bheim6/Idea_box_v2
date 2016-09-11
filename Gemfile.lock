@@ -40,6 +40,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (7.1.1)
+    bcrypt (3.1.11)
     builder (3.2.2)
     byebug (9.0.5)
     capybara (2.8.1)
@@ -58,6 +59,7 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
+    database_cleaner (1.5.3)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     erubis (2.7.0)
@@ -204,9 +206,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   byebug
   capybara
   coffee-rails (~> 4.2)
+  database_cleaner
   jbuilder (~> 2.5)
   jquery-rails
   launchy
