@@ -11,6 +11,7 @@
 
   <%= f.label :name %>
   <%= f.text_field :name %>
+  <%= f.collection_select(:category_id, @categories.order(:name),:id, :name) %>
 
   <%= f.submit %>
 <% end %>
