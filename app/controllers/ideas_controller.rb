@@ -17,6 +17,7 @@ before_action :set_idea, only: [:show, :edit, :update]
   def create
     @idea = current_user.ideas.new(idea_params)
     if @idea.save(idea_params)
+      flash[:notice] = "Idea was created!"
       redirect_to idea_path(@idea)
     else
       render :new
@@ -32,6 +33,7 @@ before_action :set_idea, only: [:show, :edit, :update]
 
   def update
     if @idea.update_attributes(idea_params)
+      flash[:notice] = "Idea was updated!"
       redirect_to idea_path(@idea)
     else
       render :edit
@@ -41,6 +43,7 @@ before_action :set_idea, only: [:show, :edit, :update]
   def destroy
     idea = Idea.find(params[:id])
     idea.destroy
+    flash[:notice] = "Idea was destroyed!"
     redirect_to ideas_path
   end
 

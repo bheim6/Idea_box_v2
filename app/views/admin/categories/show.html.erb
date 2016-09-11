@@ -1,0 +1,12 @@
+<%= link_to "Back to Index", admin_categories_path %>
+<h1><%= @category.name %></h1>
+
+<% if @category.ideas != nil %>
+  <% @category.ideas.each do |idea| %>
+    <ul>
+      <li><%= idea.name %> - <%= idea.user.username %></li>
+    </ul>
+  <% end %>
+<% else %>
+  <%= "No Ideas in this Category" %>
+<% end %>
