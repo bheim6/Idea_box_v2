@@ -49,6 +49,24 @@ before_action :set_idea, only: [:show, :edit, :update]
     redirect_to ideas_path
   end
 
+  def thing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  end
+
 
   private
   def idea_params
