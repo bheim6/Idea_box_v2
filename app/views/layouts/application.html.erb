@@ -13,14 +13,21 @@
     <% flash.each do |type, message| %>
       <%= message %><br />
     <% end %>
+    <div>
+      <h4>
+      <% if current_user %>
+        Welcome, <%= current_user.username %><br />
+        <%= link_to "Logout", logout_path, method: :delete %>
+      <% else %>
+        <%= link_to "Create an Account", new_user_path %>, or
+        <%= link_to "Login", login_path %>
+      <% end %>
+    </h4>
+      <p>
+        Now with Travis CI
+      </p>
+    </div>
 
-    <% if current_user %>
-      Welcome, <%= current_user.username %><br />
-      <%= link_to "Logout", logout_path, method: :delete %>
-    <% else %>
-      <%= link_to "Create an Account", new_user_path %>, or
-      <%= link_to "Login", login_path %>
-    <% end %>
 
     <%= yield %>
 
